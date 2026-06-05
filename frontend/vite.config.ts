@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   resolve: {
@@ -15,35 +16,14 @@ export default defineConfig({
       '@pages': path.resolve(__dirname, './src/pages'),
       '@store': path.resolve(__dirname, './src/store'),
       '@services': path.resolve(__dirname, './src/services'),
-      '@types': path.resolve(__dirname, './src/types'),
       '@utils': path.resolve(__dirname, './src/utils'),
-      '@assets': path.resolve(__dirname, './src/assets'),
     },
   },
   server: {
     port: 3000,
-    proxy: {
-      '/api': {
-        target: 'http://localhost:4000',
-        changeOrigin: true,
-      },
-    },
   },
   build: {
-    target: 'esnext',
-    minify: 'esbuild',
-    sourcemap: false,
-    reportCompressedSize: false,
-    rollupOptions: {
-      onwarn(warning, warn) {
-        // Игнорируем предупреждения
-      }
-    }
-  },
-  define: {
-    'process.env': {}
-  },
-  esbuild: {
-    logLevel: 'silent',
+    outDir: 'dist',
+    assetsDir: 'assets',
   },
 })
