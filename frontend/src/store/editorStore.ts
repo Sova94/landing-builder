@@ -100,6 +100,15 @@ export interface HistoryState {
   future: ProjectData[];
 }
 
+export interface WidgetRegistry {
+  type: WidgetType;
+  name: string;
+  icon: string;
+  category: string;
+  defaultData: WidgetData;
+  settingsSchema?: any;
+}
+
 import { getWidgetByType } from '@components/widgets/registry';
 
 interface EditorState {

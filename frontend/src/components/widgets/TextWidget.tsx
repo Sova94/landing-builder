@@ -5,10 +5,9 @@ import { TextEdit } from '@components/editor/TextEdit';
 
 interface TextWidgetProps {
   widget: WidgetData;
-  ;
 }
 
-export const TextWidget: React.FC<TextWidgetProps> = ({ widget = false }) => {
+export const TextWidget: React.FC<TextWidgetProps> = ({ widget }) => {
   const { content, style } = widget;
   const { updateWidget } = useEditorStore();
   const text = content.text || 'Текстовый блок. Нажмите чтобы редактировать.';

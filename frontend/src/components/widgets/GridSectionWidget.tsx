@@ -3,7 +3,6 @@ import type { WidgetData, WidgetType } from '@store/editorStore';
 
 interface GridSectionWidgetProps {
   widget: WidgetData;
-  ;
 }
 
 export const GridSectionWidget: React.FC<GridSectionWidgetProps> = ({ 

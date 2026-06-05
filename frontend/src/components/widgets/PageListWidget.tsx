@@ -4,10 +4,9 @@ import { FileText, ExternalLink } from 'lucide-react';
 
 interface PageListWidgetProps {
   widget: WidgetData;
-  ;
 }
 
-export const PageListWidget: React.FC<PageListWidgetProps> = ({ widget = false }) => {
+export const PageListWidget: React.FC<PageListWidgetProps> = ({ widget }) => {
   const { content, style } = widget;
   const title = content.title || 'Страницы';
   const pages = content.pages || [

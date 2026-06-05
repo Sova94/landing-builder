@@ -3,10 +3,9 @@ import type { WidgetData, WidgetType } from '@store/editorStore';
 
 interface ImageWidgetProps {
   widget: WidgetData;
-  ;
 }
 
-export const ImageWidget: React.FC<ImageWidgetProps> = ({ widget = false }) => {
+export const ImageWidget: React.FC<ImageWidgetProps> = ({ widget }) => {
   const { content, style } = widget;
   const src = content.src || '';
   const alt = content.alt || 'Изображение';

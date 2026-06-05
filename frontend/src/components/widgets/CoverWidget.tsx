@@ -5,10 +5,9 @@ import { TextEdit } from '@components/editor/TextEdit';
 
 interface CoverWidgetProps {
   widget: WidgetData;
-  ;
 }
 
-export const CoverWidget: React.FC<CoverWidgetProps> = ({ widget = false }) => {
+export const CoverWidget: React.FC<CoverWidgetProps> = ({ widget }) => {
   const { content, style } = widget;
   const { updateWidget } = useEditorStore();
   const title = content.title || 'Заголовок обложки';

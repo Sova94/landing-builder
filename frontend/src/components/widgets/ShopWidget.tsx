@@ -4,10 +4,9 @@ import { ShoppingCart, Star } from 'lucide-react';
 
 interface ShopWidgetProps {
   widget: WidgetData;
-  ;
 }
 
-export const ShopWidget: React.FC<ShopWidgetProps> = ({ widget = false }) => {
+export const ShopWidget: React.FC<ShopWidgetProps> = ({ widget }) => {
   const { content, style } = widget;
   const title = content.title || 'Наши товары';
   const subtitle = content.subtitle || '';

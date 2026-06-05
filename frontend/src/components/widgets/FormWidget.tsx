@@ -3,10 +3,9 @@ import type { WidgetData, WidgetType } from '@store/editorStore';
 
 interface FormWidgetProps {
   widget: WidgetData;
-  ;
 }
 
-export const FormWidget: React.FC<FormWidgetProps> = ({ widget = false }) => {
+export const FormWidget: React.FC<FormWidgetProps> = ({ widget }) => {
   const { content, style } = widget;
   const title = content.title || 'Форма обратной связи';
   const subtitle = content.subtitle || 'Заполните форму и мы свяжемся с вами';

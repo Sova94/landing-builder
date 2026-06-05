@@ -4,10 +4,9 @@ import { ArrowRight } from 'lucide-react';
 
 interface TileWidgetProps {
   widget: WidgetData;
-  ;
 }
 
-export const TileWidget: React.FC<TileWidgetProps> = ({ widget = false }) => {
+export const TileWidget: React.FC<TileWidgetProps> = ({ widget }) => {
   const { content, style } = widget;
   const tiles = content.tiles || [
     { title: 'Плитка 1', subtitle: 'Описание', image: '', url: '#', color: '#3b82f6' },

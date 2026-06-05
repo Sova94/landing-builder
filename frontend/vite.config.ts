@@ -32,7 +32,7 @@ export default defineConfig({
   build: {
     // Полностью игнорируем TypeScript ошибки
     target: 'esnext',
-    minify: 'terser',
+    minify: 'esbuild',
     sourcemap: false,
     reportCompressedSize: false,
     // Игнорируем ошибки

@@ -3,7 +3,6 @@ import type { WidgetData, WidgetType } from '@store/editorStore';
 
 interface RowWidgetProps {
   widget: WidgetData;
-  ;
   onAddWidget?: () => void;
   children?: React.ReactNode;
 }

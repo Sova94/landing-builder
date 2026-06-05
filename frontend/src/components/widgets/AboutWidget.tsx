@@ -3,10 +3,9 @@ import type { WidgetData, WidgetType } from '@store/editorStore';
 
 interface AboutWidgetProps {
   widget: WidgetData;
-  ;
 }
 
-export const AboutWidget: React.FC<AboutWidgetProps> = ({ widget = false }) => {
+export const AboutWidget: React.FC<AboutWidgetProps> = ({ widget }) => {
   const { content, style } = widget;
   const title = content.title || 'О проекте';
   const description = content.description || 'Описание проекта';

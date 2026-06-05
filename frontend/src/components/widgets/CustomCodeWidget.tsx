@@ -6,7 +6,6 @@ import { AlertCircle, Lightbulb, Code2 } from 'lucide-react';
 
 interface CustomCodeWidgetProps {
   widget: WidgetData;
-  ;
   onChange?: (widget: WidgetData) => void;
 }
 

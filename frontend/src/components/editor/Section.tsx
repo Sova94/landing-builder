@@ -29,7 +29,7 @@ export const Section: React.FC<SectionProps> = ({
     isDragging,
   } = useSortable({ id: section.id });
 
-  const { updateSection, removeSection, addWidget } = useEditorStore();
+  const { removeSection, addWidget } = useEditorStore();
 
   const style = {
     transform: CSS.Transform.toString(transform),

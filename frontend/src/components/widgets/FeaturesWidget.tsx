@@ -4,10 +4,9 @@ import { Check, Star, Zap, Shield, Heart, Target } from 'lucide-react';
 
 interface FeaturesWidgetProps {
   widget: WidgetData;
-  ;
 }
 
-export const FeaturesWidget: React.FC<FeaturesWidgetProps> = ({ widget = false }) => {
+export const FeaturesWidget: React.FC<FeaturesWidgetProps> = ({ widget }) => {
   const { content, style } = widget;
   const title = content.title || 'Наши преимущества';
   const subtitle = content.subtitle || '';

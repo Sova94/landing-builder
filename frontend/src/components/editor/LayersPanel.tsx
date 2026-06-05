@@ -1,8 +1,8 @@
 import React from 'react';
 import { useEditorStore } from '@store/editorStore';
+import type { SectionData, WidgetData } from '@store/editorStore';
 import { cn } from '@utils/cn';
 import { ChevronRight, ChevronDown, Eye, EyeOff, Lock } from 'lucide-react';
-import type { SectionData, WidgetData } from '@store/editorStore';
 
 interface LayerItemProps {
   section: SectionData;
