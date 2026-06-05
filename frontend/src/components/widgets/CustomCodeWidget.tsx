@@ -20,10 +20,12 @@ export const CustomCodeWidget: React.FC<CustomCodeWidgetProps> = ({
   const [compiledHTML, setCompiledHTML] = useState('');
 
   useEffect(() => {
-    const html = content?.html || '';
-    const css = content?.css || '';
-    setCompiledHTML(`<style>${css}</style>${html}`);
-  }, [content]);
+    if (isPreview && content) {
+      const html = content.html || '';
+      const css = content.css || '';
+      setCompiledHTML(`<style>${css}</style>${html}`);
+    }
+  }, [isPreview, content]);
 
   const handleEditorMount = useCallback((editor: any, monaco: any) => {
     monaco.languages.registerCompletionItemProvider('html', {
@@ -61,7 +63,7 @@ export const CustomCodeWidget: React.FC<CustomCodeWidgetProps> = ({
             height="400px"
             language="html"
             theme="vs-dark"
-            value={content?.html || ''}
+            value={content.html || ''}
             onMount={handleEditorMount}
             onChange={handleEditorChange}
             options={{ minimap: { enabled: false }, fontSize: 14, wordWrap: 'on', automaticLayout: true }}
@@ -73,7 +75,7 @@ export const CustomCodeWidget: React.FC<CustomCodeWidgetProps> = ({
             height="400px"
             language="css"
             theme="vs-dark"
-            value={content?.css || ''}
+            value={content.css || ''}
             onMount={handleEditorMount}
             onChange={handleEditorChange}
             options={{ minimap: { enabled: false }, fontSize: 14, wordWrap: 'on', automaticLayout: true }}
@@ -85,7 +87,7 @@ export const CustomCodeWidget: React.FC<CustomCodeWidgetProps> = ({
             height="400px"
             language="javascript"
             theme="vs-dark"
-            value={content?.js || ''}
+            value={content.js || ''}
             onMount={handleEditorMount}
             onChange={handleEditorChange}
             options={{ minimap: { enabled: false }, fontSize: 14, wordWrap: 'on', automaticLayout: true }}
