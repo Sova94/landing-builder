@@ -27,7 +27,7 @@ import { TeamWidget } from '@components/widgets/TeamWidget';
 import { GripVertical, Copy, Trash2, EyeOff, Eye } from 'lucide-react';
 import { Button } from '@components/common/Button';
 import { useEditorStore } from '@store/editorStore';
-import type { WidgetData } from '@types/index';
+import type { WidgetData } from '@store/editorStore';
 
 interface WidgetRendererProps {
   widget: WidgetData;

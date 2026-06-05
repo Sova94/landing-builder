@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import type { WidgetData, WidgetType } from '@types/index';
+import type { WidgetData, WidgetType } from '@store/editorStore';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface GalleryWidgetProps {

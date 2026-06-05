@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import Editor from '@monaco-editor/react';
-import type { WidgetData, WidgetType } from '@types/index';
+import type { WidgetData, WidgetType } from '@store/editorStore';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../common/Tabs';
 import { AlertCircle, Lightbulb, Code2 } from 'lucide-react';
 

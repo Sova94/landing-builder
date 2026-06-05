@@ -1,13 +1,105 @@
 import { create } from 'zustand';
 import { v4 as uuidv4 } from 'uuid';
-import type { 
-  ProjectData, 
-  WidgetData, 
-  SectionData, 
-  DeviceType, 
-  HistoryState,
-  WidgetType 
-} from '@types/index';
+
+// Типы напрямую из файла types
+export interface WidgetStyle {
+  colors?: {
+    background?: string;
+    text?: string;
+    border?: string;
+  };
+  typography?: {
+    fontFamily?: string;
+    fontSize?: string;
+    fontWeight?: string;
+    lineHeight?: string;
+    textAlign?: 'left' | 'center' | 'right' | 'justify';
+  };
+  spacing?: {
+    padding?: string;
+    margin?: string;
+    gap?: string;
+  };
+  border?: {
+    radius?: string;
+    width?: string;
+    style?: 'none' | 'solid' | 'dashed' | 'dotted';
+  };
+  shadow?: {
+    enabled: boolean;
+    color?: string;
+    blur?: string;
+    offsetX?: string;
+    offsetY?: string;
+  };
+  animation?: {
+    type?: 'fadeIn' | 'slideUp' | 'zoomIn' | 'none';
+    duration?: string;
+    delay?: string;
+  };
+  backgroundImage?: {
+    url?: string;
+    video?: string;
+    overlay?: string;
+    size?: 'cover' | 'contain' | 'auto';
+    position?: string;
+    repeat?: 'no-repeat' | 'repeat' | 'repeat-x' | 'repeat-y';
+  };
+}
+
+export type DeviceType = 'desktop' | 'tablet' | 'mobile';
+
+export type WidgetType = 
+  | 'text' | 'heading' | 'button' | 'hero' | 'image' | 'video' 
+  | 'gallery' | 'form' | 'features' | 'team' | 'footer' 
+  | 'menu' | 'pageList' | 'tile' | 'shop' | 'divider'
+  | 'about' | 'columns' | 'cover' | 'customCode' | 'grid' | 'row';
+
+export interface WidgetData {
+  id: string;
+  type: WidgetType;
+  name: string;
+  content: Record<string, any>;
+  style: WidgetStyle;
+  isVisible: {
+    desktop: boolean;
+    tablet: boolean;
+    mobile: boolean;
+  };
+  position?: {
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+    zIndex: number;
+  };
+  layout?: 'absolute' | 'relative' | 'grid';
+}
+
+export interface SectionData {
+  id: string;
+  name: string;
+  widgets: WidgetData[];
+  style: WidgetStyle;
+}
+
+export interface ProjectData {
+  id: string;
+  name: string;
+  sections: SectionData[];
+  settings: any;
+  seo: any;
+  analytics: any;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface HistoryState {
+  past: ProjectData[];
+  present: ProjectData | null;
+  future: ProjectData[];
+}
+
 import { getWidgetByType } from '@components/widgets/registry';
 
 interface EditorState {

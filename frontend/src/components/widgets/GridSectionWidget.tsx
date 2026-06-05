@@ -1,5 +1,5 @@
 import React from 'react';
-import type { WidgetData, WidgetType } from '@types/index';
+import type { WidgetData, WidgetType } from '@store/editorStore';
 
 interface GridSectionWidgetProps {
   widget: WidgetData;

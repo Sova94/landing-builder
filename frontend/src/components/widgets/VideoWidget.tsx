@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import type { WidgetData, WidgetType } from '@types/index';
+import type { WidgetData, WidgetType } from '@store/editorStore';
 import { Play, X } from 'lucide-react';
 
 interface VideoWidgetProps {

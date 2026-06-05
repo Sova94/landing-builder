@@ -1,5 +1,5 @@
 import React from 'react';
-import type { WidgetData, WidgetType } from '@types/index';
+import type { WidgetData, WidgetType } from '@store/editorStore';
 import { Check, Star, Zap, Shield, Heart, Target } from 'lucide-react';
 
 interface FeaturesWidgetProps {

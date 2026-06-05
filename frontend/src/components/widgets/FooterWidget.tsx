@@ -1,5 +1,5 @@
 import React from 'react';
-import type { WidgetData, WidgetType } from '@types/index';
+import type { WidgetData, WidgetType } from '@store/editorStore';
 import { useEditorStore } from '@store/editorStore';
 import { TextEdit } from '@components/editor/TextEdit';
 import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin } from 'lucide-react';
