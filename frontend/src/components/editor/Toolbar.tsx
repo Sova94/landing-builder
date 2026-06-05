@@ -142,8 +142,7 @@ export const Toolbar: React.FC = () => {
               onClick={() => {
                 const previewUrl = `${window.location.origin}/preview/${project.id}`;
                 navigator.clipboard.writeText(previewUrl);
-                toast.success('Ссылка скопирована!', {
-                  description: previewUrl,
+                toast.success(`Ссылка скопирована! ${previewUrl}`, {
                   duration: 8000,
                 });
               }}
