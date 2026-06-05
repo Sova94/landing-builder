@@ -30,35 +30,20 @@ export default defineConfig({
     },
   },
   build: {
-    // Полностью игнорируем TypeScript ошибки
     target: 'esnext',
     minify: 'esbuild',
     sourcemap: false,
     reportCompressedSize: false,
-    // Игнорируем ошибки
     rollupOptions: {
       onwarn(warning, warn) {
-        // Игнорируем все предупреждения
+        // Игнорируем предупреждения
       }
     }
   },
   define: {
     'process.env': {}
   },
-  // Отключаем все проверки esbuild
   esbuild: {
     logLevel: 'silent',
-    keepNames: true,
   },
-  // Игнорируем TypeScript при оптимизации
-  optimizeDeps: {
-    esbuildOptions: {
-      tsconfigRaw: {
-        compilerOptions: {
-          skipLibCheck: true,
-          noEmit: true,
-        }
-      }
-    }
-  }
 })
