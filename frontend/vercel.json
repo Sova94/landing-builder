@@ -1,0 +1,24 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "devCommand": "npm run dev",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/hub",
+      "destination": "/hub"
+    },
+    {
+      "source": "/editor/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/preview/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/$1"
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* Стили для канваса */
+  .canvas {
+    @apply min-h-screen;
+  }
+  
+  /* Стили для секций */
+  .section {
+    @apply border border-transparent hover:border-gray-200;
+    @apply transition-all duration-200;
+  }
+  
+  /* Стили для виджетов */
+  .widget-wrapper {
+    @apply border border-transparent;
+    @apply transition-all duration-200;
+  }
+  
+  .widget-wrapper:hover {
+    @apply border-dashed border-gray-300;
+  }
+  
+  /* Разрешить pointer-events для widget-content */
+  .widget-content {
+    pointer-events: auto;
+  }
+  
+  /* Разрешить редактирование для InlineEditor - ВАЖНО: более специфичный селектор */
+  .widget-content .inline-editor,
+  .widget-content .inline-editor * {
+    user-select: text !important;
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+    cursor: text !important;
+    pointer-events: auto !important;
+  }
+  
+  /* Разрешить выделение в режиме предпросмотра */
+  .preview-mode .widget-content,
+  .preview-mode .widget-content * {
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+  }
+  
+  /* Панели */
+  .widgets-panel,
+  .settings-panel,
+  .layers-panel {
+    @apply bg-white;
+  }
+  
+  /* Анимации */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .animate-slide-in {
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.2s ease-out;
+  }
+}
+
+/* Стили для Monaco Editor */
+.monaco-editor {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+/* Кастомный скроллбар */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}

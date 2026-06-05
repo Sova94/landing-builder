@@ -1,0 +1,298 @@
+{
+  "name": "Корпоративный лендинг",
+  "description": "Современный корпоративный лендинг для презентации компании и услуг",
+  "category": "business",
+  "preview": "/templates/previews/enterprise-landing.jpg",
+  "tags": ["business", "corporate", "professional", "modern"],
+  "project": {
+    "sections": [
+      {
+        "id": "hero-section",
+        "name": "Hero",
+        "widgets": [
+          {
+            "id": "hero-widget",
+            "type": "hero",
+            "name": "Hero блок",
+            "content": {
+              "eyebrow": "Добро пожаловать в нашу компанию",
+              "title": "Решения для вашего бизнеса",
+              "subtitle": "Помогаем компаниям расти и достигать новых высот с помощью инновационных технологий",
+              "buttons": [
+                {
+                  "text": "Начать сотрудничество",
+                  "url": "#contact",
+                  "variant": "primary"
+                },
+                {
+                  "text": "Узнать больше",
+                  "url": "#about",
+                  "variant": "secondary"
+                }
+              ]
+            },
+            "style": {
+              "colors": {
+                "background": "#0f172a",
+                "text": "#ffffff"
+              },
+              "backgroundImage": {
+                "overlay": "rgba(15, 23, 42, 0.8)",
+                "size": "cover"
+              }
+            },
+            "isVisible": {
+              "desktop": true,
+              "tablet": true,
+              "mobile": true
+            }
+          }
+        ],
+        "style": {
+          "spacing": {
+            "padding": "100px 0"
+          }
+        }
+      },
+      {
+        "id": "features-section",
+        "name": "Преимущества",
+        "widgets": [
+          {
+            "id": "features-heading",
+            "type": "heading",
+            "name": "Заголовок",
+            "content": {
+              "text": "Почему выбирают нас",
+              "level": 2
+            },
+            "style": {
+              "colors": {
+                "text": "#1e293b"
+              },
+              "typography": {
+                "fontSize": "42px",
+                "fontWeight": "700",
+                "textAlign": "center"
+              }
+            },
+            "isVisible": {
+              "desktop": true,
+              "tablet": true,
+              "mobile": true
+            }
+          },
+          {
+            "id": "features-grid",
+            "type": "features",
+            "name": "Преимущества",
+            "content": {
+              "features": [
+                {
+                  "icon": "ChartBar",
+                  "title": "Рост доходов",
+                  "description": "Увеличим вашу прибыль на 40% в первые 6 месяцев"
+                },
+                {
+                  "icon": "Shield",
+                  "title": "Надёжность",
+                  "description": "99.9% uptime и гарантия безопасности данных"
+                },
+                {
+                  "icon": "Zap",
+                  "title": "Скорость",
+                  "description": "Мгновенная реализация проектов любой сложности"
+                },
+                {
+                  "icon": "Users",
+                  "title": "Поддержка 24/7",
+                  "description": "Персональный менеджер всегда на связи"
+                }
+              ]
+            },
+            "style": {
+              "spacing": {
+                "padding": "40px 20px"
+              }
+            },
+            "isVisible": {
+              "desktop": true,
+              "tablet": true,
+              "mobile": true
+            }
+          }
+        ],
+        "style": {
+          "colors": {
+            "background": "#f8fafc"
+          },
+          "spacing": {
+            "padding": "80px 0"
+          }
+        }
+      },
+      {
+        "id": "testimonials-section",
+        "name": "Отзывы",
+        "widgets": [
+          {
+            "id": "testimonials-heading",
+            "type": "heading",
+            "name": "Заголовок",
+            "content": {
+              "text": "Что говорят наши клиенты",
+              "level": 2
+            },
+            "style": {
+              "colors": {
+                "text": "#1e293b"
+              },
+              "typography": {
+                "fontSize": "42px",
+                "fontWeight": "700",
+                "textAlign": "center"
+              }
+            },
+            "isVisible": {
+              "desktop": true,
+              "tablet": true,
+              "mobile": true
+            }
+          },
+          {
+            "id": "testimonials-carousel",
+            "type": "testimonials",
+            "name": "Отзывы",
+            "content": {
+              "testimonials": [
+                {
+                  "text": "Работа с этой компанией стала лучшим решением для нашего бизнеса. Результаты превзошли все ожидания!",
+                  "author": "Иван Петров",
+                  "position": "CEO, TechCorp",
+                  "avatar": "/avatars/client1.jpg"
+                },
+                {
+                  "text": "Профессиональный подход и высокий уровень сервиса. Рекомендую всем!",
+                  "author": "Мария Сидорова",
+                  "position": "Маркетинг директор, RetailMax",
+                  "avatar": "/avatars/client2.jpg"
+                }
+              ]
+            },
+            "isVisible": {
+              "desktop": true,
+              "tablet": true,
+              "mobile": true
+            }
+          }
+        ],
+        "style": {
+          "spacing": {
+            "padding": "80px 0"
+          }
+        }
+      },
+      {
+        "id": "contact-section",
+        "name": "Контакты",
+        "widgets": [
+          {
+            "id": "contact-heading",
+            "type": "heading",
+            "name": "Заголовок",
+            "content": {
+              "text": "Свяжитесь с нами",
+              "level": 2
+            },
+            "style": {
+              "colors": {
+                "text": "#1e293b"
+              },
+              "typography": {
+                "fontSize": "42px",
+                "fontWeight": "700",
+                "textAlign": "center"
+              }
+            },
+            "isVisible": {
+              "desktop": true,
+              "tablet": true,
+              "mobile": true
+            }
+          },
+          {
+            "id": "contact-form",
+            "type": "form",
+            "name": "Форма обратной связи",
+            "content": {
+              "title": "Оставьте заявку",
+              "subtitle": "Мы свяжемся с вами в течение 24 часов",
+              "fields": [
+                {
+                  "type": "text",
+                  "name": "name",
+                  "label": "Ваше имя",
+                  "required": true
+                },
+                {
+                  "type": "email",
+                  "name": "email",
+                  "label": "Email",
+                  "required": true
+                },
+                {
+                  "type": "tel",
+                  "name": "phone",
+                  "label": "Телефон",
+                  "required": false
+                },
+                {
+                  "type": "textarea",
+                  "name": "message",
+                  "label": "Сообщение",
+                  "required": true
+                }
+              ],
+              "submitButton": "Отправить заявку"
+            },
+            "style": {
+              "spacing": {
+                "padding": "40px"
+              },
+              "colors": {
+                "background": "#ffffff"
+              },
+              "border": {
+                "radius": "16px"
+              },
+              "shadow": {
+                "enabled": true,
+                "color": "rgba(0,0,0,0.1)",
+                "blur": "20px"
+              }
+            },
+            "isVisible": {
+              "desktop": true,
+              "tablet": true,
+              "mobile": true
+            }
+          }
+        ],
+        "style": {
+          "colors": {
+            "background": "#f8fafc"
+          },
+          "spacing": {
+            "padding": "80px 0"
+          }
+        }
+      }
+    ],
+    "settings": {},
+    "seo": {
+      "title": "Корпоративные решения для бизнеса",
+      "description": "Профессиональные решения для роста вашего бизнеса. Консультации, внедрение, поддержка.",
+      "keywords": ["бизнес", "решения", "консалтинг", "рост"]
+    }
+  }
+}
