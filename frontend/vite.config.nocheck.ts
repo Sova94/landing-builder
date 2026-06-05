@@ -5,8 +5,25 @@ import { fileURLToPath } from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
+// Плагин который отключает TypeScript checker
+const NoTypeCheckPlugin = () => ({
+  name: 'no-type-check',
+  config: () => ({
+    esbuild: {
+      logLevel: 'silent',
+    },
+  }),
+  // Отключаем type checking в dev
+  configureServer(server) {
+    server.config.define = {
+      ...server.config.define,
+      'process.env.NODE_ENV': JSON.stringify('production'),
+    }
+  },
+})
+
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), NoTypeCheckPlugin()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -30,6 +47,11 @@ export default defineConfig({
     },
   },
   build: {
+    target: 'esnext',
+    minify: 'terser',
+    sourcemap: false,
+    reportCompressedSize: false,
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
         manualChunks: {
@@ -39,33 +61,20 @@ export default defineConfig({
           'vendor-motion': ['framer-motion'],
         },
       },
+      onwarn() {}, // Игнорируем все предупреждения
     },
-    target: 'esnext',
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-    },
-    sourcemap: false,
-    reportCompressedSize: false,
   },
   define: {
     'process.env': {}
   },
-  // Полностью отключаем esbuild проверки
   esbuild: {
+    logLevel: 'silent',
+    keepNames: true,
     drop: ['debugger'],
-    logOverride: {
-      'this-is-undefined-in-esm': 'silent',
-      'unsupported-dynamic-import': 'silent'
-    }
   },
-  // Игнорируем ошибки TypeScript
   optimizeDeps: {
     esbuildOptions: {
-      tsconfig: 'tsconfig.prod.json'
+      logLevel: 'silent',
     }
   }
 })

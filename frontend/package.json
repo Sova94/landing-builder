@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "node build.js",
+    "build:nocheck": "vite build --config vite.config.nocheck.ts",
     "preview": "vite preview",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint . --ext ts,tsx --fix"

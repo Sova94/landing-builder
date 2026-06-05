@@ -21,5 +21,5 @@
       "destination": "/$1"
     }
   ],
-  "installCommand": "npm install --legacy-peer-deps"
+  "installCommand": "npm install --legacy-peer-deps && npx playwright install --with-deps chromium"
 }

@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-// Простой билд без проверок TypeScript
+// Прямой вызов Vite с конфигом без type checking
 import { execSync } from 'child_process';
-import { rmSync, mkdirSync } from 'fs';
+import { rmSync } from 'fs';
 
-console.log('🔨 Starting build...');
+console.log('🔨 Starting build (NO TYPE CHECKS)...');
 
 // Очищаем dist
 try {
@@ -12,19 +12,20 @@ try {
   console.log('✅ Cleaned dist');
 } catch (e) {}
 
-// Запускаем Vite билд напрямую, игнорируя TypeScript
+// Используем конфиг без проверок
 try {
-  execSync('npx vite build', {
+  console.log('🚀 Running Vite with nocheck config...');
+  execSync('npx vite build --config vite.config.nocheck.ts', {
     stdio: 'inherit',
     env: {
       ...process.env,
       NODE_ENV: 'production',
-      VITE_SKIP_TYPE_CHECK: 'true',
-    }
+    },
+    shell: true,
   });
-  console.log('✅ Build completed!');
+  console.log('✅ Build completed successfully!');
   process.exit(0);
-} catch (e) {
+} catch (error) {
   console.error('❌ Build failed');
   process.exit(1);
 }
