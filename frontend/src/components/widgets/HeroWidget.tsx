@@ -3,10 +3,10 @@ import type { WidgetData, WidgetType } from '@store/editorStore';
 
 interface HeroWidgetProps {
   widget: WidgetData;
-  isPreview?: boolean;
+  ;
 }
 
-export const HeroWidget: React.FC<HeroWidgetProps> = ({ widget, isPreview = false }) => {
+export const HeroWidget: React.FC<HeroWidgetProps> = ({ widget = false }) => {
   const { content, style } = widget;
   
   const containerStyles: React.CSSProperties = {

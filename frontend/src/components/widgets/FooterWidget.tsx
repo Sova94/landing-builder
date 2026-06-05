@@ -6,10 +6,10 @@ import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin } from 'luci
 
 interface FooterWidgetProps {
   widget: WidgetData;
-  isPreview?: boolean;
+  ;
 }
 
-export const FooterWidget: React.FC<FooterWidgetProps> = ({ widget, isPreview = false }) => {
+export const FooterWidget: React.FC<FooterWidgetProps> = ({ widget = false }) => {
   const { content, style } = widget;
   const { updateWidget } = useEditorStore();
   const logo = content.logo || '';

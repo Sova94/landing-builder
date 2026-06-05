@@ -6,10 +6,10 @@ import { Plus, Trash2, Facebook, Instagram, Twitter, Linkedin, Mail } from 'luci
 
 interface TeamWidgetProps {
   widget: WidgetData;
-  isPreview?: boolean;
+  ;
 }
 
-export const TeamWidget: React.FC<TeamWidgetProps> = ({ widget, isPreview = false }) => {
+export const TeamWidget: React.FC<TeamWidgetProps> = ({ widget = false }) => {
   const { content, style } = widget;
   const { updateWidget } = useEditorStore();
   const title = content.title || 'Наша команда';

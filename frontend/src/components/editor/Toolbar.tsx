@@ -1,7 +1,5 @@
 import React from 'react';
 import { useEditorStore } from '@store/editorStore';
-import { cn } from '@utils/cn';
-import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import {
   Undo2,
@@ -14,13 +12,8 @@ import {
   Settings,
   Layers,
   Grid3x3,
-  Monitor,
-  Smartphone,
-  Tablet,
   Play,
-  Code2,
   Wand2,
-  Trash2,
   Globe,
 } from 'lucide-react';
 import { Button } from '@components/common/Button';
@@ -43,8 +36,6 @@ export const Toolbar: React.FC = () => {
     saveProject,
     isDirty,
     project,
-    selectedWidgetId,
-    removeWidget,
     quickInstall,
   } = useEditorStore();
 

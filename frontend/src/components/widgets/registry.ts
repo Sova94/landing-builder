@@ -1,4 +1,4 @@
-import type { WidgetType, WidgetData, WidgetRegistry } from '@types/index';
+import type { WidgetType, WidgetData, WidgetRegistry } from '@store/editorStore';
 import { textWidgetConfig } from './TextWidget';
 import { headingWidgetConfig } from './HeadingWidget';
 import { buttonWidgetConfig } from './ButtonWidget';

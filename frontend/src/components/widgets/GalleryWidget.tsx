@@ -4,10 +4,10 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface GalleryWidgetProps {
   widget: WidgetData;
-  isPreview?: boolean;
+  ;
 }
 
-export const GalleryWidget: React.FC<GalleryWidgetProps> = ({ widget, isPreview = false }) => {
+export const GalleryWidget: React.FC<GalleryWidgetProps> = ({ widget = false }) => {
   const { content, style } = widget;
   const images = content.images || [];
   const layout = content.layout || 'grid';

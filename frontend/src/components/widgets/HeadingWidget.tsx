@@ -5,10 +5,10 @@ import { TextEdit } from '@components/editor/TextEdit';
 
 interface HeadingWidgetProps {
   widget: WidgetData;
-  isPreview?: boolean;
+  ;
 }
 
-export const HeadingWidget: React.FC<HeadingWidgetProps> = ({ widget, isPreview = false }) => {
+export const HeadingWidget: React.FC<HeadingWidgetProps> = ({ widget = false }) => {
   const { content, style } = widget;
   const { updateWidget } = useEditorStore();
   let level = (content.level as number) || 1;

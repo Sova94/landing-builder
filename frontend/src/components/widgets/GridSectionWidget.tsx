@@ -3,12 +3,11 @@ import type { WidgetData, WidgetType } from '@store/editorStore';
 
 interface GridSectionWidgetProps {
   widget: WidgetData;
-  isPreview?: boolean;
+  ;
 }
 
 export const GridSectionWidget: React.FC<GridSectionWidgetProps> = ({ 
-  widget, 
-  isPreview = false 
+  widget = false 
 }) => {
   const { content, style } = widget;
   const columns = content.columns || 3;

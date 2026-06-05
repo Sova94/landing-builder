@@ -5,10 +5,10 @@ import { TextEdit } from '@components/editor/TextEdit';
 
 interface ButtonWidgetProps {
   widget: WidgetData;
-  isPreview?: boolean;
+  ;
 }
 
-export const ButtonWidget: React.FC<ButtonWidgetProps> = ({ widget, isPreview = false }) => {
+export const ButtonWidget: React.FC<ButtonWidgetProps> = ({ widget = false }) => {
   const { content, style } = widget;
   const { updateWidget } = useEditorStore();
   

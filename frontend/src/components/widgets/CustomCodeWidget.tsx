@@ -6,13 +6,12 @@ import { AlertCircle, Lightbulb, Code2 } from 'lucide-react';
 
 interface CustomCodeWidgetProps {
   widget: WidgetData;
-  isPreview?: boolean;
+  ;
   onChange?: (widget: WidgetData) => void;
 }
 
 export const CustomCodeWidget: React.FC<CustomCodeWidgetProps> = ({ 
-  widget, 
-  isPreview = false,
+  widget = false,
   onChange 
 }) => {
   const { content, style } = widget;

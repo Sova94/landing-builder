@@ -3,10 +3,10 @@ import type { WidgetData, WidgetType } from '@store/editorStore';
 
 interface DividerWidgetProps {
   widget: WidgetData;
-  isPreview?: boolean;
+  ;
 }
 
-export const DividerWidget: React.FC<DividerWidgetProps> = ({ widget, isPreview = false }) => {
+export const DividerWidget: React.FC<DividerWidgetProps> = ({ widget = false }) => {
   const { content, style } = widget;
   const dividerType = content.dividerType || 'line';
   const color = content.color || '#e5e7eb';

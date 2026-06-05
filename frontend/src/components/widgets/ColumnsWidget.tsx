@@ -6,10 +6,10 @@ import { Plus, Trash2 } from 'lucide-react';
 
 interface ColumnsWidgetProps {
   widget: WidgetData;
-  isPreview?: boolean;
+  ;
 }
 
-export const ColumnsWidget: React.FC<ColumnsWidgetProps> = ({ widget, isPreview = false }) => {
+export const ColumnsWidget: React.FC<ColumnsWidgetProps> = ({ widget = false }) => {
   const { content, style } = widget;
   const { updateWidget } = useEditorStore();
   const columns = content.columns || 3;

@@ -4,10 +4,10 @@ import { Play, X } from 'lucide-react';
 
 interface VideoWidgetProps {
   widget: WidgetData;
-  isPreview?: boolean;
+  ;
 }
 
-export const VideoWidget: React.FC<VideoWidgetProps> = ({ widget, isPreview = false }) => {
+export const VideoWidget: React.FC<VideoWidgetProps> = ({ widget = false }) => {
   const { content, style } = widget;
   const videoUrl = content.videoUrl || '';
   const thumbnail = content.thumbnail || '';

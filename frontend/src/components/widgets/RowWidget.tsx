@@ -3,14 +3,13 @@ import type { WidgetData, WidgetType } from '@store/editorStore';
 
 interface RowWidgetProps {
   widget: WidgetData;
-  isPreview?: boolean;
+  ;
   onAddWidget?: () => void;
   children?: React.ReactNode;
 }
 
 export const RowWidget: React.FC<RowWidgetProps> = ({ 
-  widget, 
-  isPreview = false,
+  widget = false,
   onAddWidget,
   children 
 }) => {

@@ -4,10 +4,10 @@ import { Menu, X } from 'lucide-react';
 
 interface MenuWidgetProps {
   widget: WidgetData;
-  isPreview?: boolean;
+  ;
 }
 
-export const MenuWidget: React.FC<MenuWidgetProps> = ({ widget, isPreview = false }) => {
+export const MenuWidget: React.FC<MenuWidgetProps> = ({ widget = false }) => {
   const { content, style } = widget;
   const logo = content.logo || '';
   const logoText = content.logoText || 'Логотип';
