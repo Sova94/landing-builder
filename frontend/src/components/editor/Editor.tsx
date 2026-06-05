@@ -5,8 +5,6 @@ import { WidgetsPanel } from './WidgetsPanel';
 import { SettingsPanel } from './SettingsPanel';
 import { CanvasAbsolute } from './CanvasAbsolute';
 import { LayersPanel } from './LayersPanel';
-import { DeviceSelector } from './DeviceSelector';
-import { cn } from '@utils/cn';
 
 export const Editor: React.FC = () => {
   const {
@@ -14,7 +12,6 @@ export const Editor: React.FC = () => {
     isSettingsPanelOpen,
     isLayersPanelOpen,
     isPreviewMode,
-    currentDevice,
   } = useEditorStore();
 
   return (

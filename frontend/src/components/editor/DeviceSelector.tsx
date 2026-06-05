@@ -3,7 +3,7 @@ import { useEditorStore } from '@store/editorStore';
 import { cn } from '@utils/cn';
 import { Monitor, Tablet, Smartphone } from 'lucide-react';
 import { Button } from '@components/common/Button';
-import type { DeviceType } from '@types/index';
+import type { DeviceType } from '@store/editorStore';
 
 const devices: Array<{ type: DeviceType; icon: React.ComponentType<{ className?: string }>; label: string }> = [
   { type: 'desktop', icon: Monitor, label: 'Desktop' },

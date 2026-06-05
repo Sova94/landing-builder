@@ -5,7 +5,7 @@ import { useEditorStore } from '@store/editorStore';
 import { cn } from '@utils/cn';
 import { GripVertical, Plus, Trash2, Settings } from 'lucide-react';
 import { Button } from '@components/common/Button';
-import type { SectionData } from '@types/index';
+import type { SectionData } from '@store/editorStore';
 
 interface SectionProps {
   section: SectionData;

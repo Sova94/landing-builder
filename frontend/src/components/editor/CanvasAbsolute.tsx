@@ -2,8 +2,7 @@ import React, { useRef, useState, useCallback, useEffect } from 'react';
 import { useEditorStore } from '@store/editorStore';
 import { WidgetRenderer } from './WidgetRenderer';
 import { cn } from '@utils/cn';
-import { Crosshair, Eye, EyeOff } from 'lucide-react';
-import { Button } from '../common/Button';
+import { Crosshair } from 'lucide-react';
 
 interface DragState {
   isDragging: boolean;
@@ -22,6 +21,8 @@ interface ResizeState {
   startY: number;
   startWidth: number;
   startHeight: number;
+  startWidgetX?: number;
+  startWidgetY?: number;
 }
 
 export const CanvasAbsolute: React.FC = () => {
@@ -89,6 +90,8 @@ export const CanvasAbsolute: React.FC = () => {
       startY: e.clientY,
       startWidth: widget.position.width,
       startHeight: widget.position.height,
+      startWidgetX: widget.position.x,
+      startWidgetY: widget.position.y,
     });
   }, [widgets, selectWidget, isPreviewMode]);
 
