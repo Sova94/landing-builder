@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "npx vite build --mode production",
   "outputDirectory": "dist",
   "devCommand": "npm run dev",
   "framework": "vite",
@@ -20,5 +20,6 @@
       "source": "/(.*)",
       "destination": "/$1"
     }
-  ]
+  ],
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- ."
 }
