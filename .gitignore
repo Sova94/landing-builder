@@ -37,3 +37,6 @@ coverage/
 
 # Public
 public/
+
+.vercel
+.env*
